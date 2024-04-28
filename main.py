@@ -18,7 +18,7 @@ while True:
     print()
 
     if escolha == 0:    #DEPOSITAR
-        valor_deposito = int(input("Digite o valor que deseja depositar: "))
+        valor_deposito = float(input("Digite o valor que deseja depositar: "))
         saldo += valor_deposito
         extrato += f"Depósito realizado: R$ {valor_deposito:.2f}\n"
         print("Depósito realizado com sucesso!")
@@ -26,7 +26,7 @@ while True:
     elif escolha == 1:    #SACAR
 
         if limite_saque != 0:
-            valor_saque = int(input("Digite o valor que deseja sacar: "))
+            valor_saque = float(input("Digite o valor que deseja sacar: "))
             if valor_saque > 500:
                 print("O saque não foi realizado. O valor máximo do saque é de R$ 500.00")
             elif valor_saque > saldo:
