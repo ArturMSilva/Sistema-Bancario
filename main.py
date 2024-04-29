@@ -1,10 +1,10 @@
- menu = """
--------------------- MENU --------------------
+menu = """
+-----------  MENU  ------------
     [0] DEPOSITAR
     [1] SACAR
     [2] EXTRATO
     [3] SAIR
-----------------------------------------------
+-------------------------------
 """
 
 LIMITE_SAQUE = 3
@@ -35,16 +35,19 @@ while True:
                 saldo -= valor_saque
                 extrato += f"Saque realizado: R$ {valor_saque:.2f}\n"
                 print("Saque realizado com sucesso!")
-                limite_saque -= 1
+                LIMITE_SAQUE -= 1
         else:
             print("Não é possísel realizar o saque. Você já usou todos os saques diários.")
 
 
     elif escolha == 2:    #EXTRATO
+        print("----------- EXTRATO -----------")
         print(extrato)
-        print(f"Saldo: R$ {saldo:.2f}\n")
+        print(f"Saldo: R$ {saldo:.2f}")
+        print("-------------------------------")
     
     elif escolha == 3:    #SAIR
+        print("Até a próxima! Estaremos ansiosos para vê-lo novamente em breve!\nSaindo...")
         break
 
     else:
