@@ -1,11 +1,4 @@
-limite_saque = 3
-limite_valor_saque = 500
-saldo = 1000
-extrato = ""
-
-while True:
-
-    menu = """
+ menu = """
 -------------------- MENU --------------------
     [0] DEPOSITAR
     [1] SACAR
@@ -13,6 +6,13 @@ while True:
     [3] SAIR
 ----------------------------------------------
 """
+
+LIMITE_SAQUE = 3
+LIMITE_VALOR_SAQUE = 500
+saldo = 0
+extrato = ""
+
+while True:
 
     escolha = int(input(menu))
     print()
@@ -25,9 +25,9 @@ while True:
 
     elif escolha == 1:    #SACAR
 
-        if limite_saque != 0:
+        if LIMITE_SAQUE != 0:
             valor_saque = float(input("Digite o valor que deseja sacar: "))
-            if valor_saque > 500:
+            if valor_saque > LIMITE_VALOR_SAQUE:
                 print("O saque não foi realizado. O valor máximo do saque é de R$ 500.00")
             elif valor_saque > saldo:
                 print("Saldo insuficiente.")
